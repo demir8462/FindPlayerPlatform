@@ -1,0 +1,44 @@
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\AHMET KAYA.exe
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\AHMET KAYA.deps.json
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\AHMET KAYA.runtimeconfig.json
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\AHMET KAYA.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\AHMET KAYA.pdb
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.csproj.AssemblyReference.cache
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.csproj.GenerateResource.cache
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.AssemblyInfoInputs.cache
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.AssemblyInfo.cs
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.csproj.CoreCompileInputs.cache
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\refint\AHMET KAYA.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.pdb
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.genruntimeconfig.cache
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\ref\AHMET KAYA.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.Login.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\System.Data.SQLite.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\System.Data.SQLite.EF6.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.Menu.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET KAYA.csproj.CopyComplete
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.Properties.Resources.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.girisyapp.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\ZstdNet.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.ISTEKBILDIRIM.resources
