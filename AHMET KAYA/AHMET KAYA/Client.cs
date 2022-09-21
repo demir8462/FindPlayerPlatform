@@ -4,9 +4,13 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-
+using TXTSCREEN;
 namespace AHMET_KAYA
 {
+    public enum ISTEKTIPI
+    {
+        OYUN,MESAJ
+    }
     public class Client
     {
         public string ip, nick;
@@ -16,6 +20,10 @@ namespace AHMET_KAYA
         private StreamWriter writer;
         Thread mesajthr,kontrolthr;
         ISTEKBILDIRIM ib;
+        MesajIstek FORMmib;
+        bool OYUNBEKLE;
+        public static bool MSGKBLKNTRL;
+        Form1 chatscreen;
         public Client(string ip, string nick)
         {
             this.ip = ip;
@@ -35,6 +43,7 @@ namespace AHMET_KAYA
             reader = new StreamReader(stream);
             writer = new StreamWriter(stream);
             ib = new ISTEKBILDIRIM(ref writer);
+            FORMmib = new MesajIstek(ref writer);
             kontrolthr.Start();
             mesajthr.Start();
             
@@ -74,24 +83,75 @@ namespace AHMET_KAYA
                         istekbilgi = Mesaj.Split(':'); 
                         string kimden = istekbilgi[1]; 
                         string cevap = istekbilgi[2];
+                        string partoftext;
+                        if (OYUNBEKLE)
+                        {
+                            partoftext = "Oyun";
+                        }
+                        else
+                            partoftext = "Mesajlaşma";
                         if(cevap=="EVET")
                         {
-                            MessageBox.Show(kimden+" Oyun isteğini kabul etti !","HARİKA !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                           
+                            MessageBox.Show(kimden+" "+partoftext+" isteğini kabul etti !","HARİKA !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }else if(cevap=="HAYIR")
                         {
-                            MessageBox.Show(kimden + " Oyun isteğini red etti !", "TÜH !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(kimden + ""+partoftext+" Oyun isteğini red etti !", "TÜH !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        
+                        if(!OYUNBEKLE && cevap == "EVET")
+                        {
+                            MessageBox.Show("asdas");
+                            startChat(kimden);
+                        }
+                    }
+                    else if (Mesaj.StartsWith("#MI"))  //gelen cvp CVP:KIMDEN:CEVAP:CVP
+                    {
+                        istekbilgi = Mesaj.Split(':');
+                        string kimden = istekbilgi[1];
+                        FORMmib.setText(kimden);
+                        FORMmib.Show();
+                        Application.Run();
+                        if(MSGKBLKNTRL)
+                        {
+                            chatscreen = new Form1(ref writer,ref reader, kimden);
+                            chatscreen.Show();
+                            Application.Run();
+                        }
+                    }
+                    else if (Mesaj.StartsWith("#MSG"))  //gelen cvp CVP:KIMDEN:CEVAP:CVP
+                    {
+                        if (Mesaj.Split(':')[1] == "END")
+                        {
+                            Form1.sohbetdevam = false;
+                        }
+                        MessageBox.Show("MESAJ EKLEDIM : "+Mesaj);
+                        Form1.mesajlar.Add(Mesaj);
                     }
                 }
                 Thread.Sleep(2000);
             }
         }
-        public void IstekYolla(string kime)// OYUN ISTEGI MI KONTROL ETMEK ICIN FORM : #OI:NICK:OI#
+        public void IstekYolla(string kime,ISTEKTIPI tip)// OYUN ISTEGI MI KONTROL ETMEK ICIN FORM : #OI:NICK:OI#
         {
-            writer.WriteLine("#OI:"+kime+":OI#");
+            string mesaj;
+            if(tip == ISTEKTIPI.OYUN)
+                writer.WriteLine("#OI:"+kime+":OI#");
+            else if(tip == ISTEKTIPI.MESAJ)
+                writer.WriteLine("#MI:" + kime + ":MI#");
             writer.Flush();
         }
-        
+        public void MesajIstekYolla(string kime)// OYUN ISTEGI MI KONTROL ETMEK ICIN FORM : #OI:NICK:OI#
+        {
+            writer.WriteLine("#MI:" + kime + ":MI#");
+            writer.Flush();
+        }
+        void startChat(string kimle)
+        {
+            writer.WriteLine("#SC:"+kimle+":SC#");
+            writer.Flush();
+            chatscreen = new Form1(ref writer,ref reader,kimle);
+            chatscreen.Show();
+            Application.Run();
+        }
     }
 }

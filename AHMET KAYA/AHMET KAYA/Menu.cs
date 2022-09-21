@@ -71,14 +71,17 @@ namespace AHMET_KAYA
         {
             if (listView1.SelectedItems[0].SubItems.Count == 0)
                 return;
-            user.IstekYolla(listView1.SelectedItems[0].SubItems[1].Text);
+            user.IstekYolla(listView1.SelectedItems[0].SubItems[1].Text,ISTEKTIPI.OYUN);
             button1.Enabled = false;
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(i.ToString());
+            if (listView1.SelectedItems[0].SubItems.Count == 0)
+                return; 
+            user.IstekYolla(listView1.SelectedItems[0].SubItems[1].Text,ISTEKTIPI.MESAJ);
+            button1.Enabled = false;
         }
     }
 }

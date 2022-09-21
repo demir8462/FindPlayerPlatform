@@ -28,6 +28,8 @@ namespace AHMETKAYAMASERVER
         MySqlCommand cmd;
         MySqlDataAdapter da = new MySqlDataAdapter();
         DataTable dt = new DataTable();
+        
+        bool sohbetcliental;
         public Client(Socket soket,MySqlCommand cmd)
         {
             this.soket = soket;
@@ -68,7 +70,7 @@ namespace AHMETKAYAMASERVER
                     {
                         if (gelenline.Length > 0 && gelenline.StartsWith('#') && gelenline.EndsWith('#'))
                         {
-                            gelenline = gelenline.Replace("#", "");
+                            gelenline = gelenline.Substring(1, gelenline.Length - 2);
                             if (!nickalindi)
                             {
                                 gelenline = gelenline.Replace("#", "");
@@ -83,30 +85,63 @@ namespace AHMETKAYAMASERVER
                                 string kime = OI[1];
                                 string gonderilecekmesaj = "#OI:" + Nick + ":" + Oyun + ":" + Dc + ":OI#";
                                 MessageBox.Show("SERVERE GELEN MESAJ:"+gonderilecekmesaj);
-                                foreach (Client item in Form1.clients)
-                                {
-                                    if(item.Nick == kime)
-                                    {
-                                        MessageBox.Show("MESAJ GONDERILIYOR");
-                                        item.gonderici.WriteLine(gonderilecekmesaj);
-                                        item.gonderici.Flush();
-                                    }
-                                }
-                            }else if(gelenline.StartsWith("CVP")) // gelen cvp : CVP:KIME:CEVAP:CVP giden cvp CVP:KIMDEN:CEVAP:CVP
+                                Client item = clientBul(kime);
+                                item.gonderici.WriteLine(gonderilecekmesaj);
+                                item.gonderici.Flush();
+                            }
+                            else if(gelenline.StartsWith("CVP")) // gelen cvp : CVP:KIME:CEVAP:CVP giden cvp CVP:KIMDEN:CEVAP:CVP
                             {
                                 string[] CEVAPS = gelenline.Split(':'); // OI:NİCK:OI
                                 string kime = CEVAPS[1];
                                 string cevap = CEVAPS[2];
                                 string gonderilecekmesaj = "#CVP:" + Nick + ":"+cevap + ":CVP#";
+                                Client item = clientBul(kime);
+                                item.gonderici.WriteLine(gonderilecekmesaj);
+                                item.gonderici.Flush();
+                            }
+                            else if (gelenline.StartsWith("MI")) // gelen: #MI:KIME:MI# 
+                            {
+                                string[] veri = gelenline.Split(":");
+                                string gonderilecekmesaj = "#MI:" + Nick + ":MI#";
+                                string kime = veri[1];
                                 foreach (Client item in Form1.clients)
                                 {
                                     if (item.Nick == kime)
                                     {
-                                        MessageBox.Show("CEVAP GONDERILIYOR");
+                                        MessageBox.Show("MESAJ ISTEGI GONDERILIYOR");
                                         item.gonderici.WriteLine(gonderilecekmesaj);
                                         item.gonderici.Flush();
                                     }
                                 }
+                            }
+                            else if (gelenline.StartsWith("MSG")) // gelen: #MSG:TO:KİME:MESAJ#
+                            {
+                                int ayracsayac = 0;
+                                int startfrom=0;
+                                ayracsayac = 0;
+                                string kime = gelenline.Split(':')[2];
+                                if (gelenline.Split(':')[1]=="END")
+                                {
+                                    Client i = clientBul(kime);
+                                    i.gonderici.WriteLine("#MSG:END:"+Nick+"#");
+                                }
+                                for (int i = 0; i < gelenline.Length; i++)
+                                {
+                                    if (gelenline[i] == ':')
+                                        ayracsayac++;
+                                    if (ayracsayac == 3)
+                                    {
+                                        startfrom = i + 1;
+                                        break;
+                                    }
+                                }
+                               
+                                
+                                string mesaj = gelenline.Substring(startfrom,gelenline.Length - startfrom);
+                                MessageBox.Show(kime);
+                                Client item = clientBul(kime);
+                                item.gonderici.WriteLine("#MSG:TO:" + Nick + ":" + mesaj + "#");
+                                item.gonderici.Flush();
                             }
                         }
                         atlandi = 0;
@@ -151,5 +186,17 @@ namespace AHMETKAYAMASERVER
             if (cmd.ExecuteNonQuery() != 1)
                 MessageBox.Show("hata");
         }
+        Client clientBul(string nick)
+        {
+            foreach (Client item in Form1.clients)
+            {
+                if (item.Nick == nick)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
+    
 }

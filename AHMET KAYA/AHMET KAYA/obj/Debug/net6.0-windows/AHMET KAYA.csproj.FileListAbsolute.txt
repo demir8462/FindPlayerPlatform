@@ -42,3 +42,5 @@ C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\Ubiet
 C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.ISTEKBILDIRIM.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\TXTSCREEN.Form1.resources
+C:\Users\alide\source\repos\AHMET KAYA\AHMET KAYA\obj\Debug\net6.0-windows\AHMET_KAYA.MesajIstek.resources

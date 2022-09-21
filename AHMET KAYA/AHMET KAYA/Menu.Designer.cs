@@ -174,11 +174,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(362, 415);
+            this.button2.Location = new System.Drawing.Point(448, 415);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
+            this.button2.Size = new System.Drawing.Size(150, 23);
             this.button2.TabIndex = 15;
-            this.button2.Text = "KONTROL";
+            this.button2.Text = "MESAJLASMA BASLAT";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
